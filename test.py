@@ -52,7 +52,7 @@ class TestPerson(unittest.TestCase):
 
             marco = Person("marco")
             self.assertEqual(marco.name, "marco")
-            self.assertEqual(marco.age, 23)
+            self.assertEqual(marco.age, 24)
             mocked_get.assert_called_with("https://api.agify.io/?name=marco")
 
             mocked_get.return_value.ok = False
