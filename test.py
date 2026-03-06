@@ -48,11 +48,11 @@ class TestPerson(unittest.TestCase):
     def test_fetch(self):
         with patch('person.requests.get') as mocked_get:
             mocked_get.return_value.ok = True
-            mocked_get.return_value.text = "{ \"age\": 22 }"
+            mocked_get.return_value.text = "{ \"age\": 23 }"
 
             marco = Person("marco")
             self.assertEqual(marco.name, "marco")
-            self.assertEqual(marco.age, 22)
+            self.assertEqual(marco.age, 23)
             mocked_get.assert_called_with("https://api.agify.io/?name=marco")
 
             mocked_get.return_value.ok = False
